@@ -17,9 +17,10 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from app.user.rest.views import LoginView
+from app.user.rest.views import LoginView, CreateUserView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/v1/login/", LoginView.as_view(), name="user-login"),
+    path("api/v1/user/login/", LoginView.as_view(), name="user-login"),
+    path("api/v1/user/create/", CreateUserView.as_view(), name="user-create"),
 ]
