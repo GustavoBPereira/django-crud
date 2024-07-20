@@ -2,3 +2,5 @@ django
 python-decouple
 psycopg2
 djangorestframework
+requests
+smart-url
