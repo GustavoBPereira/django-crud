@@ -6,8 +6,9 @@ class GenericClient:
     BASE_URL = None
 
     def get(self, endpoint, params=None):
-        response = requests.get(self._build_url(endpoint, params))
-        print(response.status_code)
+        response = requests.get(
+            self._build_url(endpoint, params), headers=self.get_headers()
+        )
         response.raise_for_status()
         return response.json()
 
@@ -17,3 +18,6 @@ class GenericClient:
         if params:
             url.update_query(params)
         return str(url)
+
+    def get_headers(self):  # noqa
+        return {}
