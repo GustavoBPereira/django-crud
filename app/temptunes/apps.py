@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class CompanyConfig(AppConfig):
+class TemptunesConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "app.company"
+    name = "app.temptunes"
