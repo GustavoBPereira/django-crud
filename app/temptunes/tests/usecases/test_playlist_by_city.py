@@ -23,8 +23,10 @@ class PlayListByCityUseCaseTests(TestCase):
         }
 
         result = self.usecase.run("London")
-        self.assertEqual(result["id"], "7kypTrSiSadjXnqAbawyKX")
-        self.assertEqual(result["name"], "Rock Playlist")
+        self.assertEqual(result["city_data"]["main"]["temp"], 15)
+
+        self.assertEqual(result["playlist_data"]["id"], "7kypTrSiSadjXnqAbawyKX")
+        self.assertEqual(result["playlist_data"]["name"], "Rock Playlist")
 
     @patch("app.temptunes.clients.OpenWeatherClient.get_city_data")
     @patch("app.temptunes.clients.SpotifyClient.get_playlist")
