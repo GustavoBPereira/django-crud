@@ -35,8 +35,8 @@ class PlayListByCityUseCase:
             else:
                 raise UnknownPartnerError()
         return {
-            'city_data': city_data,
-            'playlist_data': playlist_data,
+            "city_data": city_data,
+            "playlist_data": playlist_data,
         }
 
     def get_playlist_id_by_temperature(self, temp):

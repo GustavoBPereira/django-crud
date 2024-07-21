@@ -17,10 +17,17 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+
+from app.temptunes.rest.views import CitySongSuggestionView
 from app.user.rest.views import LoginView, CreateUserView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/v1/user/login/", LoginView.as_view(), name="user-login"),
     path("api/v1/user/create/", CreateUserView.as_view(), name="user-create"),
+    path(
+        "api/v1/temptunes/suggestions/city/<str:city>/",
+        CitySongSuggestionView.as_view(),
+        name="temptunes-suggestion",
+    ),
 ]
