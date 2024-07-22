@@ -22,7 +22,7 @@ from app.temptunes.rest.views import CitySongSuggestionView
 from app.user.rest.views import LoginView, CreateUserView
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    # path("admin/", admin.site.urls),
     path("api/v1/user/login/", LoginView.as_view(), name="user-login"),
     path("api/v1/user/create/", CreateUserView.as_view(), name="user-create"),
     path(
